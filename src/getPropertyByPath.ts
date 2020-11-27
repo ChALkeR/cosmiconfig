@@ -20,6 +20,9 @@ function getPropertyByPath(
     if (previous === undefined) {
       return previous;
     }
+    if (!Object.prototype.hasOwnProperty.call(previous, key)) {
+      return undefined
+    }
     return previous[key];
   }, source);
 }
